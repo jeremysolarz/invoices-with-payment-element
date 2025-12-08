@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "4242:4242"
+    env_file:
+      - .env
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./public:/app/public
+    restart: unless-stopped
+
